@@ -1,44 +1,105 @@
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -I./ -I./ft_printf -I./get_next_line
+# **************************************************************************** #
+#                                  Makefile                                    #
+# **************************************************************************** #
 
-NAME = libft.a
+NAME        = libft.a
+CC          = cc
+CFLAGS      = -Wall -Wextra -Werror -I./includes
 
-PRINTF_DIR = ft_printf
-GNL_DIR = get_next_line
+# -------------------------------
+#   Directories with source 
+# -------------------------------
+LIBFT_DIR   = src/libft
+PRINTF_DIR  = src/ft_printf
+GNL_DIR     = src/get_next_line
 
-SRCS = ft_bzero.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-	ft_strlen.c ft_toupper.c ft_calloc.c ft_isalpha.c ft_isdigit.c ft_memcpy.c \
-	ft_memset.c ft_tolower.c ft_memmove.c ft_putchar_fd.c ft_strlcpy.c ft_strlcat.c \
-	ft_strdup.c ft_atoi.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c \
-	ft_strnstr.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
-	ft_striteri.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-	ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+# -------------------------------
+#   Source for libft
+# -------------------------------
+LIBFT_SRCS  = $(LIBFT_DIR)/ft_atoi.c \
+              $(LIBFT_DIR)/ft_bzero.c \
+              $(LIBFT_DIR)/ft_calloc.c \
+              $(LIBFT_DIR)/ft_isalnum.c \
+              $(LIBFT_DIR)/ft_isalpha.c \
+              $(LIBFT_DIR)/ft_isascii.c \
+              $(LIBFT_DIR)/ft_isdigit.c \
+              $(LIBFT_DIR)/ft_isprint.c \
+              $(LIBFT_DIR)/ft_itoa.c \
+              $(LIBFT_DIR)/ft_lstadd_back_bonus.c \
+              $(LIBFT_DIR)/ft_lstadd_front_bonus.c \
+              $(LIBFT_DIR)/ft_lstclear_bonus.c \
+              $(LIBFT_DIR)/ft_lstdelone_bonus.c \
+              $(LIBFT_DIR)/ft_lstiter_bonus.c \
+              $(LIBFT_DIR)/ft_lstlast_bonus.c \
+              $(LIBFT_DIR)/ft_lstmap_bonus.c \
+              $(LIBFT_DIR)/ft_lstnew_bonus.c \
+              $(LIBFT_DIR)/ft_lstsize_bonus.c \
+              $(LIBFT_DIR)/ft_memchr.c \
+              $(LIBFT_DIR)/ft_memcmp.c \
+              $(LIBFT_DIR)/ft_memcpy.c \
+              $(LIBFT_DIR)/ft_memmove.c \
+              $(LIBFT_DIR)/ft_memset.c \
+              $(LIBFT_DIR)/ft_putchar_fd.c \
+              $(LIBFT_DIR)/ft_putendl_fd.c \
+              $(LIBFT_DIR)/ft_putnbr_fd.c \
+              $(LIBFT_DIR)/ft_putstr_fd.c \
+              $(LIBFT_DIR)/ft_split.c \
+              $(LIBFT_DIR)/ft_strchr.c \
+              $(LIBFT_DIR)/ft_strdup.c \
+              $(LIBFT_DIR)/ft_striteri.c \
+              $(LIBFT_DIR)/ft_strjoin.c \
+              $(LIBFT_DIR)/ft_strlcat.c \
+              $(LIBFT_DIR)/ft_strlcpy.c \
+              $(LIBFT_DIR)/ft_strlen.c \
+              $(LIBFT_DIR)/ft_strmapi.c \
+              $(LIBFT_DIR)/ft_strncmp.c \
+              $(LIBFT_DIR)/ft_strnstr.c \
+              $(LIBFT_DIR)/ft_strrchr.c \
+              $(LIBFT_DIR)/ft_strtrim.c \
+              $(LIBFT_DIR)/ft_substr.c \
+              $(LIBFT_DIR)/ft_tolower.c \
+              $(LIBFT_DIR)/ft_toupper.c
 
-PRINTF_SRCS = $(PRINTF_DIR)/ft_printf.c \
-	$(PRINTF_DIR)/ft_number_functions.c \
-	$(PRINTF_DIR)/ft_ptr_functions.c \
-	$(PRINTF_DIR)/ft_string_functions.c
+# -------------------------------
+#   Source for ft_printf
+# -------------------------------
+FT_PRINTF_SRCS = $(PRINTF_DIR)/ft_printf.c \
+                 $(PRINTF_DIR)/ft_number_functions.c \
+                 $(PRINTF_DIR)/ft_ptr_functions.c \
+                 $(PRINTF_DIR)/ft_string_functions.c
 
-GNL_SRCS = $(GNL_DIR)/get_next_line.c \
-	$(GNL_DIR)/get_next_line_utils.c
+# -------------------------------
+#   Source for get_next_line
+# -------------------------------
+GNL_SRCS    = $(GNL_DIR)/get_next_line.c \
+              $(GNL_DIR)/get_next_line_utils.c
 
-SRCS += $(PRINTF_SRCS)
-SRCS += $(GNL_SRCS)
+# -------------------------------
+#   Combine all into SRCS
+# -------------------------------
+SRCS        = $(LIBFT_SRCS) $(FT_PRINTF_SRCS) $(GNL_SRCS)
 
-OBJS = $(SRCS:.c=.o)
+# -------------------------------
+#   Convert .c files to .o
+# -------------------------------
+OBJS        = $(SRCS:.c=.o)
 
-HEADER = libft.h \
-	$(PRINTF_DIR)/ft_printf.h \
-	$(GNL_DIR)/get_next_line.h
+# -------------------------------
+#         Header files
+# -------------------------------
+HEADERS     = includes/libft.h \
+              includes/ft_printf.h \
+              includes/get_next_line.h
 
+# -------------------------------
+#          Build rules
+# -------------------------------
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c $(HEADER)
+%.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
