@@ -1,9 +1,10 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I./ -I./ft_printf
+CFLAGS = -Wall -Wextra -Werror -I./ -I./ft_printf -I./get_next_line
 
 NAME = libft.a
 
 PRINTF_DIR = ft_printf
+GNL_DIR = get_next_line
 
 SRCS = ft_bzero.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strlen.c ft_toupper.c ft_calloc.c ft_isalpha.c ft_isdigit.c ft_memcpy.c \
@@ -13,16 +14,24 @@ SRCS = ft_bzero.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_striteri.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-	ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c \
+	ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
-PRINTF_SRCS = $(PRINTF_DIR)/ft_printf.c $(PRINTF_DIR)/ft_number_functions.c \
-	$(PRINTF_DIR)/ft_ptr_functions.c $(PRINTF_DIR)/ft_string_functions.c
+PRINTF_SRCS = $(PRINTF_DIR)/ft_printf.c \
+	$(PRINTF_DIR)/ft_number_functions.c \
+	$(PRINTF_DIR)/ft_ptr_functions.c \
+	$(PRINTF_DIR)/ft_string_functions.c
+
+GNL_SRCS = $(GNL_DIR)/get_next_line.c \
+	$(GNL_DIR)/get_next_line_utils.c
 
 SRCS += $(PRINTF_SRCS)
-	
+SRCS += $(GNL_SRCS)
+
 OBJS = $(SRCS:.c=.o)
 
-HEADER = libft.h $(PRINTF_DIR)/ft_printf.h
+HEADER = libft.h \
+	$(PRINTF_DIR)/ft_printf.h \
+	$(GNL_DIR)/get_next_line.h
 
 all: $(NAME)
 
