@@ -4,7 +4,7 @@
 
 NAME        = libft.a
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -I./includes
+CFLAGS      = -Wall -Wextra -Werror -I./
 
 # -------------------------------
 #   Directories with source 
@@ -87,9 +87,9 @@ OBJS        = $(SRCS:.c=.o)
 # -------------------------------
 #         Header files
 # -------------------------------
-HEADERS     = includes/libft.h \
-              includes/ft_printf.h \
-              includes/get_next_line.h
+HEADERS     = libft.h \
+              ft_printf.h \
+              get_next_line.h
 
 # -------------------------------
 #          Build rules
