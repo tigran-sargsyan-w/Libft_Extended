@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsargsya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:52:29 by tsargsya          #+#    #+#             */
-/*   Updated: 2024/12/11 18:40:00 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/02/11 20:19:52 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_atoi(const char *nptr)
 	}
 	while (*nptr >= '0' && *nptr <= '9')
 	{
-		res = (res * 10) + (*nptr - 48);
+		res = (res * 10) + (*nptr - '0');
 		nptr++;
 	}
 	return (res * sign);
