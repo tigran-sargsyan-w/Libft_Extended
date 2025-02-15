@@ -97,18 +97,23 @@ HEADERS     = libft.h \
 #          Build rules
 # -------------------------------
 all: $(NAME)
+	@echo "🔥 Libft built successfully!"
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+	@echo "✅ Libft object files compiled."
+	@echo "🚀 $(NAME) created!"
 
 %.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
-
+	@$(CC) $(CFLAGS) -c $< -o $@
+	
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
+	@echo "🗑️  Object files removed."
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "😒 $(NAME) removed."
 
 re: fclean all
 
