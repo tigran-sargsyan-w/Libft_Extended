@@ -109,7 +109,7 @@ $(NAME): $(OBJS)
 	
 clean:
 	@rm -f $(OBJS)
-	@echo "🗑️  Object files removed."
+	@echo "🗑️ Libft object files removed."
 
 fclean: clean
 	@rm -f $(NAME)
