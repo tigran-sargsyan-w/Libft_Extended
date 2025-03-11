@@ -6,7 +6,7 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:07:11 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/01/25 13:53:26 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/03/10 23:43:30 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stddef.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4
+#  define BUFFER_SIZE 4096
 # endif
 
 # ifndef MAX_FD
