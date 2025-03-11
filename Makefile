@@ -18,6 +18,7 @@ GNL_DIR     = src/get_next_line
 # -------------------------------
 LIBFT_SRCS  = $(LIBFT_DIR)/ft_atoi.c \
               $(LIBFT_DIR)/ft_atol.c \
+              $(LIBFT_DIR)/ft_atoi_hex.c \
               $(LIBFT_DIR)/ft_bzero.c \
               $(LIBFT_DIR)/ft_calloc.c \
               $(LIBFT_DIR)/ft_isalnum.c \

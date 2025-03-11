@@ -6,7 +6,7 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 14:14:34 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/03/07 15:38:20 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/03/11 19:40:24 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strdup(const char *s);
 int					ft_atoi(const char *nptr);
 long				ft_atol(const char *nptr);
+int					ft_atoi_hex(const char *str);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 int					ft_strcmp(const char *s1, const char *s2);
