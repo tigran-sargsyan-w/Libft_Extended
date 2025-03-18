@@ -26,6 +26,10 @@ LIBFT_SRCS  = $(LIBFT_DIR)/ft_atoi.c \
               $(LIBFT_DIR)/ft_isascii.c \
               $(LIBFT_DIR)/ft_isdigit.c \
               $(LIBFT_DIR)/ft_isprint.c \
+              $(LIBFT_DIR)/ft_isspace.c \
+              $(LIBFT_DIR)/ft_isvalid_hex.c \
+              $(LIBFT_DIR)/ft_isvalid_int.c \
+              $(LIBFT_DIR)/ft_isxdigit.c \
               $(LIBFT_DIR)/ft_itoa.c \
               $(LIBFT_DIR)/ft_count_tokens.c \
               $(LIBFT_DIR)/ft_lstadd_back_bonus.c \
