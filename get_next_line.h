@@ -6,7 +6,7 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:07:11 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/03/10 23:43:30 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/04/27 13:35:38 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # include <stddef.h>
+# include "libft.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 4096
@@ -31,6 +32,5 @@ char	*strdup_till_nl(char *str);
 char	*read_and_join(int fd, char *buffers, char *line);
 char	*handle_empty_line(char *buffers, char *line);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-size_t	ft_strlen(const char *s);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:07:00 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/01/25 13:54:03 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/04/27 13:35:28 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,6 @@ char	*strjoin_till_nl(char *line, char *buffer)
 		str[j++] = buffer[i++];
 	str[j] = '\0';
 	return (free(line), str);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
 }
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
