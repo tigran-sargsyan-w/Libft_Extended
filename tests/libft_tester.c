@@ -8,14 +8,14 @@
 #include <limits.h>
 #include <fcntl.h>
 
-#define ASSERT(msg, cond) \
-	do { \
-		if (!(cond)) { \
-			printf("❌ %s\n", msg); \
-			exit(1); \
-		} else { \
-			printf("✅ %s\n", msg); \
-		} \
+#define ASSERT(_msg, _cond)                            \
+	do                                                 \
+	{                                                  \
+		if (!(_cond))                                  \
+		{                                              \
+			dprintf(2, "❌ Test failed: %s\n", _msg);   \
+			exit(1);                                   \
+		}                                              \
 	} while (0)
 
 // ───────────── CHAR & INT CHECKS ─────────────
