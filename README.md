@@ -1,45 +1,88 @@
 # Libft_Extended
 
-`Libft_Extended` is an enhanced version of the original `libft` library, combining additional functionalities for future projects. It includes:
+`Libft_Extended` is an enhanced version of the original [*libft*](https://github.com/tigran-sargsyan-w/Libft) library. It combines multiple essential modules into a single, reusable static library — `libft.a`.  
 
-- **Core libft functions**  
-  Original `libft` repository: [libft](https://github.com/tigran-sargsyan-w/Libft)
+Included modules:
 
-- **ft_printf**  
-  A custom implementation of the standard `printf` function.  
-  Original `ft_printf` repository: [ft_printf](https://github.com/tigran-sargsyan-w/ft_printf)
+- ✅ **Libft** – core standard library reimplementations  
+- ✅ **ft_printf** – custom implementation of `printf`  
+- ✅ **get_next_line** – function to read a line from a file descriptor  
 
-- **get_next_line**  
-  A function to read a line from a file descriptor.  
-  Original `get_next_line` repository: [get_next_line](https://github.com/tigran-sargsyan-w/get_next_line)
+Each module has been integrated from its original standalone repository:
 
-All these modules are compiled into a single static library called **`libft.a`**.
+- [*libft*](https://github.com/tigran-sargsyan-w/Libft)  
+- [*ft_printf*](https://github.com/tigran-sargsyan-w/ft_printf)  
+- [*get_next_line*](https://github.com/tigran-sargsyan-w/get_next_line)
 
 ---
 
-## Getting Started
+## 🔧 Extended Features
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/tigran-sargsyan-w/Libft_Extended.git libft
-   ```
-2. Usage in Your Project
-    - **Place your `main.c`** (or other source files) in the same directory (or wherever you prefer).
-    - **Compile** your code against `libft.a`. For example, if your `main.c` is in the same directory as `libft.a`, you can run:
-     
+Although each module was initially built as a faithful reimplementation of the standard C library functions (according to the 42 school specifications), they have since been **modernized and extended** with additional functionality:
 
-   ```bash
-   cc main.c -L./libft -lft
-   ```
-    - `-L./libft` tells the compiler where to look for the library (`libft.a`).
-    - `-lft` links against `libft.a` (the compiler automatically adds the `lib` prefix and the `.a` extension).
-    - You may also need to include the header paths with `-I./libft` (or similar) if your headers (`libft.h`, `ft_printf.h`, `get_next_line.h`) reside in subdirectories.
+- `libft` includes extra validation utilities and list helpers  
+- `ft_printf` supports `ft_printf` — a custom version of `printf` for output to STDOUT and also supports `ft_dprintf` — a custom version of `dprintf` for output to specific file descriptors  
+- `get_next_line` remains lightweight, but now integrates better with other components  
 
-## Notes
+This makes **Libft_Extended** a robust base for building real-world C applications and projects.
 
-- `libft.a` is a static library that contains all functions from **libft**, **ft_printf**, and **get_next_line**.
-- Make sure to include the correct headers (`libft.h`, `ft_printf.h`, `get_next_line.h`) in your source files.
-- You may need to add `-I./libft` or similar include paths depending on how you organize your includes.
+---
 
-Enjoy using **Libft_Extended** for your future C projects!
+## 📦 Getting Started
 
+### 1. Clone the repository
+
+```
+git clone https://github.com/tigran-sargsyan-w/Libft_Extended.git libft
+```
+
+### 2. Build the library
+
+Use the provided Makefile to compile all modules into `libft.a`:
+
+```
+make
+```
+
+This will generate `libft.a` in the root of the repository.
+
+### 3. Compile your project using `libft.a`
+
+Assuming your `main.c` is located in the root of your project:
+
+```
+cc main.c -I./libft -L./libft -lft
+```
+
+- `-I./libft` — adds the path to the header files (`libft.h`, `ft_printf.h`, `get_next_line.h`)  
+- `-L./libft` — adds the path to the compiled static library  
+- `-lft` — links against `libft.a` (as the compiler interprets `-lft` as `libft.a`)
+
+---
+
+## 📌 Notes
+
+- `libft.a` includes all compiled code from `libft`, `ft_printf`, and `get_next_line`.
+- Make sure to include the appropriate headers in your source files:
+
+```
+#include "libft.h"
+#include "ft_printf.h"
+#include "get_next_line.h"
+```
+
+- Depending on your project structure, you may need to adapt `-I` and `-L` paths.
+
+---
+
+## 🛠️ Tip
+
+For a simple test setup, place your `main.c` alongside the `libft` folder and compile using:
+
+```
+cc main.c libft/libft.a -Ilibft
+```
+
+---
+
+Enjoy using **Libft_Extended** as a robust foundation for your future C projects!
