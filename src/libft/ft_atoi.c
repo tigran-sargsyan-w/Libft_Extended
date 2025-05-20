@@ -6,10 +6,15 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:52:29 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/02/11 20:19:52 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:48:26 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief Converts a string to an integer.
+ * @param nptr The string to convert.
+ * @return The converted integer value.
+ */
 int	ft_atoi(const char *nptr)
 {
 	int	res;

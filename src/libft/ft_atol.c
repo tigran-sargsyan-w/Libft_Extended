@@ -6,10 +6,15 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:24:48 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/02/11 20:25:11 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:48:52 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief Converts a string to a long integer.
+ * @param nptr The string to convert.
+ * @return The converted long integer value.
+ */
 long	ft_atol(const char *nptr)
 {
 	long	res;

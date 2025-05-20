@@ -3,16 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsargsya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:03:15 by tsargsya          #+#    #+#             */
-/*   Updated: 2024/12/12 18:07:33 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 22:05:33 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * @brief Counts the number of words in a string separated by a given character.
+ * @param str The string to count words in.
+ * @param separator The character used as the separator.
+ * @return The number of words in the string.
+ */
 static size_t	get_word_count(char const *str, char separator)
 {
 	size_t	i;
@@ -36,6 +42,11 @@ static size_t	get_word_count(char const *str, char separator)
 	return (count);
 }
 
+/**
+ * @brief Frees all allocated memory for the array of strings.
+ * @param tab The array of strings to free.
+ * @param words_count The number of strings in the array.
+ */
 static void	*free_all(char **tab, size_t words_count)
 {
 	size_t	i;
@@ -50,6 +61,12 @@ static void	*free_all(char **tab, size_t words_count)
 	return (NULL);
 }
 
+/**
+ * @brief Splits a string into an array of strings using a specified separator.
+ * @param s The string to split.
+ * @param c The character used as the separator.
+ * @return An array of strings (tokens) or NULL if the allocation fails.
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**res;

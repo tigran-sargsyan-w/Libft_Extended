@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsargsya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:55:22 by tsargsya          #+#    #+#             */
-/*   Updated: 2024/12/11 20:30:28 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:50:37 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+/**
+ * @brief Allocates memory for an array of nmemb elements of size bytes each
+ *        and initializes all bytes to zero.
+ * @param nmemb The number of elements to allocate.
+ * @param size The size of each element.
+ * @return A pointer to the allocated memory, or NULL if the allocation fails.
+ */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*str;

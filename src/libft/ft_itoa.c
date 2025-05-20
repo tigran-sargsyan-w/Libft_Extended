@@ -3,16 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsargsya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:04:32 by tsargsya          #+#    #+#             */
-/*   Updated: 2024/12/12 19:14:46 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:57:19 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * @brief Calculates the length of the number in digits.
+ * @param n The integer to calculate the length for.
+ * @return The length of the number in digits.
+ */
 static size_t	get_num_len(int n)
 {
 	size_t			len;
@@ -37,6 +42,11 @@ static size_t	get_num_len(int n)
 	return (len);
 }
 
+/**
+ * @brief Converts an integer to a string representation.
+ * @param n The integer to convert.
+ * @return A pointer to the string representation of the integer.
+ */
 char	*ft_itoa(int n)
 {
 	size_t			length;

@@ -3,16 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsargsya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:00:23 by tsargsya          #+#    #+#             */
-/*   Updated: 2024/12/12 13:52:55 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 22:11:06 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * @brief Allocates (with malloc(3)) and returns an empty string.
+ * @return A pointer to the newly allocated empty string, or NULL if the
+ *         allocation fails.
+ */
 static char	*ft_return_empty_str(void)
 {
 	char	*res;
@@ -24,6 +29,15 @@ static char	*ft_return_empty_str(void)
 	return (res);
 }
 
+/**
+ * @brief Allocates (with malloc(3)) and returns a substring from the string s.
+ *        The substring begins at index start and is of maximum size len.
+ * @param s The string to extract the substring from.
+ * @param start The starting index of the substring.
+ * @param len The maximum length of the substring.
+ * @return A pointer to the newly allocated substring, or NULL if the allocation
+ *         fails or if s is NULL.
+ */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*res;

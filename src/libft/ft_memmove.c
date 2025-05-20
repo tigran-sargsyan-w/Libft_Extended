@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsargsya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:41:27 by tsargsya          #+#    #+#             */
-/*   Updated: 2024/12/11 13:16:25 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 22:01:32 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
+/**
+ * @brief Copies n bytes from memory area src to memory area dest.
+ *        The memory areas may overlap.
+ * @param dest The destination memory area.
+ * @param src The source memory area.
+ * @param n The number of bytes to copy.
+ * @return A pointer to the destination memory area dest.
+ */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t		i;

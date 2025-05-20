@@ -6,12 +6,17 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 19:38:25 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/03/11 19:39:31 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:47:31 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Converts a hexadecimal string to an integer.
+ * @param str The hexadecimal string to convert.
+ * @return The converted integer value.
+ */
 int	ft_atoi_hex(const char *str)
 {
 	int	result;

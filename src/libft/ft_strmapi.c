@@ -3,16 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsargsya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:05:07 by tsargsya          #+#    #+#             */
-/*   Updated: 2024/12/12 20:56:32 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 22:08:34 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * @brief Applies the function f to each character of the string s, passing
+ *        its index as the first argument, and returns a new string with the
+ *        results.
+ * @param s The string to iterate over.
+ * @param f The function to apply to each character.
+ * @return A pointer to the newly allocated string, or NULL if the allocation
+ *         fails.
+ */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*res;
