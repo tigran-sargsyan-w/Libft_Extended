@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_number_functions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsemenov <dsemenov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:53:38 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/18 19:16:40 by dsemenov         ###   ########.fr       */
+/*   Updated: 2025/05/20 12:28:37 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ ssize_t	ft_unsigned_dputnbr(int fd, unsigned int nbr)
 			return (-1);
 		len += res;
 	}
-	if (ft_putchar_fd(fd, ((nbr % 10) + '0') == -1))
+	if (ft_putchar_fd(fd, (nbr % 10)) + '0' == -1)
 		return (-1);
 	len += 1;
 	return (len);
