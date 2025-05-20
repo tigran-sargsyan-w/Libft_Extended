@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsargsya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:08:19 by tsargsya          #+#    #+#             */
-/*   Updated: 2024/12/13 14:45:53 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 12:48:52 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	ft_putstr_fd(char *s, int fd)
 
 	i = 0;
 	while (s[i])
-		ft_putchar_fd(s[i++], fd);
+		ft_putchar_fd(fd, s[i++]);
 }
