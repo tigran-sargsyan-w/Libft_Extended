@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dprintf.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsemenov <dsemenov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:18:42 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/18 19:14:15 by dsemenov         ###   ########.fr       */
+/*   Updated: 2025/05/20 12:43:42 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define FT_DPRINTF_H
 
 # include <unistd.h>
+# include "libft.h"
 
 int				ft_dprintf(int fd, const char *format, ...);
-ssize_t			ft_putchar_fd(int fd, char c);
 ssize_t			ft_dputstr(int fd, char *s);
 ssize_t			ft_dputnbr(int fd, int n);
 ssize_t			ft_unsigned_dputnbr(int fd, unsigned int n);

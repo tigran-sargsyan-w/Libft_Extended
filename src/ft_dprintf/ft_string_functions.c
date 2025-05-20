@@ -3,21 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string_functions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsemenov <dsemenov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 13:49:03 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/18 19:14:26 by dsemenov         ###   ########.fr       */
+/*   Updated: 2025/05/20 12:42:53 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-ssize_t	ft_putchar_fd(int fd, char c)
-{
-	if (write(fd, &c, 1) == -1)
-		return (-1);
-	return (1);
-}
+#include "libft.h"
 
 ssize_t	ft_dputstr(int fd, char *s)
 {
