@@ -13,6 +13,7 @@ echo "🚀 Running tests..."
 if ./run_tests > /dev/null; then
 	echo "✅ All tests passed successfully!"
 	make fclean >/dev/null
+	rm -f run_tests
 	echo "🗑  Cleaning up..."
 else
 	echo "❌ Some tests failed!"
