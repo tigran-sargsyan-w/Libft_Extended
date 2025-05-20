@@ -6,7 +6,7 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 19:21:57 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/20 19:58:39 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 23:22:38 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ static char	*read_and_join(int fd, char *buffers, char *line);
 static char	*handle_empty_line(char *buffers, char *line);
 static void	shift_buffer_after_nl(char *buffer);
 
+/**
+ * @brief Duplicates a string until a newline character is found.
+ * @param str The string to duplicate.
+ * @return The newly allocated string, or NULL on error.
+ */
 static char	*strdup_till_nl(char *str)
 {
 	char	*dup;
@@ -41,6 +46,13 @@ static char	*strdup_till_nl(char *str)
 	return (dup);
 }
 
+/**
+ * @brief Reads from a file descriptor and joins the buffer to the line.
+ * @param fd The file descriptor to read from.
+ * @param buffers The buffer to read into.
+ * @param line The line to join with the buffer.
+ * @return The newly allocated string, or NULL on error.
+ */
 static char	*read_and_join(int fd, char *buffers, char *line)
 {
 	int	bytes;
@@ -66,6 +78,12 @@ static char	*read_and_join(int fd, char *buffers, char *line)
 	return (line);
 }
 
+/**
+ * @brief Handles the case where the line is empty.
+ * @param buffers The buffer to check.
+ * @param line The line to check.
+ * @return The line if not empty, or NULL if empty.
+ */
 static char	*handle_empty_line(char *buffers, char *line)
 {
 	if (!line[0])
@@ -77,6 +95,10 @@ static char	*handle_empty_line(char *buffers, char *line)
 	return (line);
 }
 
+/**
+ * @brief Shifts the buffer after a newline character.
+ * @param buffer The buffer to shift.
+ */
 static void	shift_buffer_after_nl(char *buffer)
 {
 	size_t	i;
@@ -97,6 +119,11 @@ static void	shift_buffer_after_nl(char *buffer)
 	buffer[j] = '\0';
 }
 
+/**
+ * @brief Reads a line from a file descriptor.
+ * @param fd The file descriptor to read from.
+ * @return The line read, or NULL on error or end of file.
+ */
 char	*get_next_line(int fd)
 {
 	char		*line;

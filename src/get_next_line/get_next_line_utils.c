@@ -6,12 +6,18 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:07:00 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/20 19:58:21 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 23:21:27 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+/**
+ * @brief Joins two strings until a newline character is found.
+ * @param line The original line.
+ * @param buffer The buffer to join.
+ * @return The newly allocated string, or NULL on error.
+ */
 char	*strjoin_till_nl(char *line, char *buffer)
 {
 	char	*str;
