@@ -6,13 +6,11 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 19:21:57 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/20 19:50:48 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 19:58:39 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdlib.h>
-#include <unistd.h>
 
 static char	*strdup_till_nl(char *str);
 static char	*read_and_join(int fd, char *buffers, char *line);
