@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "🛠  Compiling libft..."
-make >/dev/null
+make re >/dev/null
 
 echo "📦 Compiling tester..."
 if ! cc -Wall -Wextra -Werror -I. tests/libft_tester.c libft.a -o run_tests; then
