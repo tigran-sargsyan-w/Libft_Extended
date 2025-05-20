@@ -6,13 +6,11 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:39:16 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/20 20:24:15 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:43:16 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stddef.h>
-#include <unistd.h>
 
 ssize_t	ft_dputptr(int fd, void *ptr)
 {

@@ -6,7 +6,7 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:18:42 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/20 20:23:01 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:43:11 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft.h"
 # include <stdarg.h>
+# include <stddef.h>
 # include <unistd.h>
 
 int		ft_printf(const char *format, ...);

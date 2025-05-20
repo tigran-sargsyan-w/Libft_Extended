@@ -6,12 +6,11 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 13:49:03 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/20 12:42:53 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:43:42 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft.h"
+#include "ft_printf.h"
 
 ssize_t	ft_dputstr(int fd, char *s)
 {

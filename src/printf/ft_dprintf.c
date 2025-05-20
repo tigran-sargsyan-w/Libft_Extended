@@ -6,15 +6,12 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:17:03 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/20 20:24:10 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:42:27 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdarg.h>
-#include <unistd.h>
 
-// static ssize_t	ft_process_fd(int fd, const char **format, va_list args);
 static int		ft_parse(int fd, va_list args, const char c);
 
 int	ft_dprintf(int fd, const char *format, ...)

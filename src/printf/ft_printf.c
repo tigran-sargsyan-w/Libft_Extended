@@ -6,13 +6,11 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:17:03 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/20 20:24:01 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 21:42:58 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdarg.h>
-#include <unistd.h>
 
 int	ft_printf(const char *format, ...)
 {
