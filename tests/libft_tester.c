@@ -172,8 +172,8 @@ void test_get_next_line(void)
 	int fd;
 	char *line;
 
-	fd = open("main.c", O_RDONLY);
-	ASSERT("open(\"main.c\") != -1", fd != -1);
+	fd = open("tests/libft_tester.c", O_RDONLY);
+	ASSERT("open(\"tests/libft_tester.c\") != -1", fd != -1);
 
 	line = get_next_line(fd);
 	ASSERT("get_next_line returns non-NULL", line != NULL);
