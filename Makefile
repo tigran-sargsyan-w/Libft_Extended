@@ -32,15 +32,15 @@ LIBFT_SRCS  = $(LIBFT_DIR)/ft_atoi.c \
               $(LIBFT_DIR)/ft_isxdigit.c \
               $(LIBFT_DIR)/ft_itoa.c \
               $(LIBFT_DIR)/ft_count_tokens.c \
-              $(LIBFT_DIR)/ft_lstadd_back_bonus.c \
-              $(LIBFT_DIR)/ft_lstadd_front_bonus.c \
-              $(LIBFT_DIR)/ft_lstclear_bonus.c \
-              $(LIBFT_DIR)/ft_lstdelone_bonus.c \
-              $(LIBFT_DIR)/ft_lstiter_bonus.c \
-              $(LIBFT_DIR)/ft_lstlast_bonus.c \
-              $(LIBFT_DIR)/ft_lstmap_bonus.c \
-              $(LIBFT_DIR)/ft_lstnew_bonus.c \
-              $(LIBFT_DIR)/ft_lstsize_bonus.c \
+              $(LIBFT_DIR)/ft_lstadd_back.c \
+              $(LIBFT_DIR)/ft_lstadd_front.c \
+              $(LIBFT_DIR)/ft_lstclear.c \
+              $(LIBFT_DIR)/ft_lstdelone.c \
+              $(LIBFT_DIR)/ft_lstiter.c \
+              $(LIBFT_DIR)/ft_lstlast.c \
+              $(LIBFT_DIR)/ft_lstmap.c \
+              $(LIBFT_DIR)/ft_lstnew.c \
+              $(LIBFT_DIR)/ft_lstsize.c \
               $(LIBFT_DIR)/ft_memchr.c \
               $(LIBFT_DIR)/ft_memcmp.c \
               $(LIBFT_DIR)/ft_memcpy.c \
