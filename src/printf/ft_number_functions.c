@@ -6,11 +6,11 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:53:38 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/20 12:28:37 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/20 20:24:06 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_dprintf.h"
+#include "ft_printf.h"
 #include <unistd.h>
 
 static ssize_t	ft_dputnbr_recursive(int fd, unsigned int nbr)

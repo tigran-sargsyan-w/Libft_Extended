@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ptr_functions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsemenov <dsemenov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:39:16 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/18 19:13:50 by dsemenov         ###   ########.fr       */
+/*   Updated: 2025/05/20 20:24:15 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_dprintf.h"
+#include "ft_printf.h"
 #include <stddef.h>
 #include <unistd.h>
 
