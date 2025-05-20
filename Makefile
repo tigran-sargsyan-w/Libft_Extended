@@ -11,6 +11,7 @@ CFLAGS      = -Wall -Wextra -Werror -I./
 # -------------------------------
 LIBFT_DIR   = src/libft
 PRINTF_DIR  = src/ft_printf
+DPRINTF_DIR  = src/ft_dprintf
 GNL_DIR     = src/get_next_line
 
 # -------------------------------
@@ -75,6 +76,13 @@ FT_PRINTF_SRCS = $(PRINTF_DIR)/ft_printf.c \
                  $(PRINTF_DIR)/ft_number_functions.c \
                  $(PRINTF_DIR)/ft_ptr_functions.c \
                  $(PRINTF_DIR)/ft_string_functions.c
+# -------------------------------
+#   Source for ft_dprintf
+# -------------------------------
+FT_DPRINTF_SRCS = $(DPRINTF_DIR)/ft_dprintf.c \
+				  $(DPRINTF_DIR)/ft_number_functions.c \
+                  $(DPRINTF_DIR)/ft_ptr_functions.c \
+                  $(DPRINTF_DIR)/ft_string_functions.c
 
 # -------------------------------
 #   Source for get_next_line
@@ -85,7 +93,7 @@ GNL_SRCS    = $(GNL_DIR)/get_next_line.c \
 # -------------------------------
 #   Combine all into SRCS
 # -------------------------------
-SRCS        = $(LIBFT_SRCS) $(FT_PRINTF_SRCS) $(GNL_SRCS)
+SRCS        = $(LIBFT_SRCS) $(FT_PRINTF_SRCS) $(FT_DPRINTF_SRCS) $(GNL_SRCS)
 
 # -------------------------------
 #   Convert .c files to .o
@@ -97,6 +105,7 @@ OBJS        = $(SRCS:.c=.o)
 # -------------------------------
 HEADERS     = libft.h \
               ft_printf.h \
+              ft_dprintf.h \
               get_next_line.h
 
 # -------------------------------
