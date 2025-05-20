@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsemenov <dsemenov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:17:03 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/18 19:15:53 by dsemenov         ###   ########.fr       */
+/*   Updated: 2025/05/20 20:11:32 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-static ssize_t	ft_process(int fd, const char **format, va_list args);
+// static ssize_t	ft_process_fd(int fd, const char **format, va_list args);
 static int		ft_parse(int fd, va_list args, const char c);
 
 int	ft_dprintf(int fd, const char *format, ...)
@@ -31,7 +31,7 @@ int	ft_dprintf(int fd, const char *format, ...)
 	va_start(args, format);
 	while (*format)
 	{
-		result = ft_process(fd, &format, args);
+		result = ft_process_fd(fd, &format, args);
 		if (result == -1)
 		{
 			va_end(args);
@@ -44,7 +44,7 @@ int	ft_dprintf(int fd, const char *format, ...)
 	return (len);
 }
 
-static ssize_t	ft_process(int fd, const char **format, va_list args)
+ssize_t	ft_process_fd(int fd, const char **format, va_list args)
 {
 	if (**format != '%')
 		return (ft_putchar_fd(fd, **format));

@@ -72,10 +72,7 @@ LIBFT_SRCS  = $(LIBFT_DIR)/ft_atoi.c \
 # -------------------------------
 #   Source for ft_printf
 # -------------------------------
-FT_PRINTF_SRCS = $(PRINTF_DIR)/ft_printf.c \
-                 $(PRINTF_DIR)/ft_number_functions.c \
-                 $(PRINTF_DIR)/ft_ptr_functions.c \
-                 $(PRINTF_DIR)/ft_string_functions.c
+FT_PRINTF_SRCS = $(PRINTF_DIR)/ft_printf.c
 # -------------------------------
 #   Source for ft_dprintf
 # -------------------------------
