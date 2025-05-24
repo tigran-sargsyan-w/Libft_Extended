@@ -6,7 +6,7 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 14:14:34 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/20 13:10:23 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/05/24 12:15:34 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ ssize_t				ft_putchar_fd(int fd, char c);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strdup(const char *s);
+char				*ft_strndup(const char *s, size_t n);
 int					ft_atoi(const char *nptr);
 long				ft_atol(const char *nptr);
 int					ft_atoi_hex(const char *str);

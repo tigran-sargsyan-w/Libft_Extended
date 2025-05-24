@@ -52,6 +52,7 @@ void test_string_memory(void)
 	ASSERT("ft_strrchr(\"abcabc\", 'a')", ft_strrchr("abcabc", 'a') != NULL);
 	ASSERT("ft_strnstr(\"hello world\", \"world\", 11)", ft_strnstr("hello world", "world", 11) != NULL);
 	ASSERT("ft_strdup(\"hi\")", (tmp = ft_strdup("hi")) && strcmp(tmp, "hi") == 0); free(tmp);
+	ASSERT("ft_strndup(\"hello\", 3)", (tmp = ft_strndup("hello", 3)) && strcmp(tmp, "hel") == 0); free(tmp);
 	ASSERT("ft_strjoin(\"ab\", \"cd\")", (tmp = ft_strjoin("ab", "cd")) && strcmp(tmp, "abcd") == 0); free(tmp);
 	ASSERT("ft_substr(\"abcdef\", 2, 3)", (tmp = ft_substr("abcdef", 2, 3)) && strcmp(tmp, "cde") == 0); free(tmp);
 	ASSERT("ft_strtrim(\"--42--\", \"-\")", (tmp = ft_strtrim("--42--", "-")) && strcmp(tmp, "42") == 0); free(tmp);

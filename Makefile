@@ -53,6 +53,7 @@ LIBFT_SRCS  = $(LIBFT_DIR)/ft_atoi.c \
               $(LIBFT_DIR)/ft_split.c \
               $(LIBFT_DIR)/ft_strchr.c \
               $(LIBFT_DIR)/ft_strdup.c \
+              $(LIBFT_DIR)/ft_strndup.c \
               $(LIBFT_DIR)/ft_striteri.c \
               $(LIBFT_DIR)/ft_strjoin.c \
               $(LIBFT_DIR)/ft_strlcat.c \
