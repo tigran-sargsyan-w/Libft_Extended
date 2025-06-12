@@ -6,7 +6,7 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:04:32 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/20 21:57:19 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/06/12 15:23:26 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,29 +49,29 @@ static size_t	get_num_len(int n)
  */
 char	*ft_itoa(int n)
 {
-	size_t			length;
+	size_t			len;
 	char			*str;
 	size_t			i;
-	unsigned int	buffer;
+	unsigned int	buf;
 
-	length = get_num_len(n);
-	str = malloc(length * sizeof (char) + 1);
+	len = get_num_len(n);
+	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
+	str[len] = '\0';
 	if (n < 0)
-	{
-		str[0] = '-';
-		buffer = n * -1;
-	}
+		buf = -n;
 	else
-		buffer = n;
-	i = 0;
-	str[length] = '\0';
-	while (i < length && str[(length - 1) - i] != '-')
+		buf = n;
+	i = len - 1;
+	if (buf == 0)
+		str[i--] = '0';
+	while (buf > 0)
 	{
-		str[(length - 1) - i] = buffer % 10 + '0';
-		buffer /= 10;
-		i++;
+		str[i--] = buf % 10 + '0';
+		buf /= 10;
 	}
+	if (n < 0)
+		str[0] = '-';
 	return (str);
 }
