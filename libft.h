@@ -6,7 +6,7 @@
 /*   By: tsargsya <tsargsya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 14:14:34 by tsargsya          #+#    #+#             */
-/*   Updated: 2025/05/24 12:15:34 by tsargsya         ###   ########.fr       */
+/*   Updated: 2025/10/31 23:18:37 by tsargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 # include <stddef.h>
 # include <unistd.h>
+
+typedef struct s_strtod_state
+{
+	long double		m;
+	int				frac;
+	int				exp10;
+	int				has;
+}					t_strtod_state;
 
 typedef struct s_list
 {
@@ -47,6 +55,7 @@ char				*ft_strndup(const char *s, size_t n);
 int					ft_atoi(const char *nptr);
 long				ft_atol(const char *nptr);
 int					ft_atoi_hex(const char *str);
+double				ft_strtod(const char *nptr, char **endptr);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 int					ft_strcmp(const char *s1, const char *s2);
