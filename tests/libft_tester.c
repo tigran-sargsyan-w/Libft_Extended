@@ -17,6 +17,27 @@
 		}                                              \
 	} while (0)
 
+// Small helper for approximate double comparison without libm dependency
+static int approx_eq(double a, double b, double eps)
+{
+	double diff;
+	double aa;
+	double bb;
+	double scale;
+
+	diff = a - b;
+	if (diff < 0)
+		diff = -diff;
+	aa = a < 0 ? -a : a;
+	bb = b < 0 ? -b : b;
+	scale = 1.0;
+	if (aa > scale)
+		scale = aa;
+	if (bb > scale)
+		scale = bb;
+	return diff <= eps * scale;
+}
+
 // ───────────── CHAR & INT CHECKS ─────────────
 void test_char_checks(void)
 {
@@ -154,6 +175,43 @@ void test_misc(void)
 	ASSERT("ft_count_tokens()", ft_count_tokens(tokens) == 3);
 }
 
+// ───────────── STRTOD ─────────────
+void test_strtod(void)
+{
+	char *end;
+	const char *s;
+
+	// integers and simple decimals
+	s = "42"; ASSERT("ft_strtod(\"42\") value", approx_eq(ft_strtod(s, &end), 42.0, 1e-12)); ASSERT("endptr at end for '42'", *end == '\0');
+	s = "-3.5"; ASSERT("ft_strtod(\"-3.5\") value", approx_eq(ft_strtod(s, &end), -3.5, 1e-12)); ASSERT("endptr at end for '-3.5'", *end == '\0');
+	s = "+7.25"; ASSERT("ft_strtod(\"+7.25\") value", approx_eq(ft_strtod(s, &end), 7.25, 1e-12)); ASSERT("endptr at end for '+7.25'", *end == '\0');
+
+	// leading/trailing whitespace
+	s = "   12.34  "; ASSERT("ft_strtod with leading spaces", approx_eq(ft_strtod(s, &end), 12.34, 1e-12)); ASSERT("endptr stops before trailing space", *end == ' ');
+
+	// fraction-only or trailing dot
+	s = ".5"; ASSERT("ft_strtod(\".5\") == 0.5", approx_eq(ft_strtod(s, &end), 0.5, 1e-12)); ASSERT("endptr at end for '.5'", *end == '\0');
+	s = "5."; ASSERT("ft_strtod(\"5.\") == 5.0", approx_eq(ft_strtod(s, &end), 5.0, 1e-12)); ASSERT("endptr at end for '5.'", *end == '\0');
+
+	// exponent forms
+	s = "1e3"; ASSERT("ft_strtod(\"1e3\") == 1000", approx_eq(ft_strtod(s, &end), 1000.0, 1e-9)); ASSERT("endptr at end for '1e3'", *end == '\0');
+	s = "1.5e-3"; ASSERT("ft_strtod(\"1.5e-3\") == 0.0015", approx_eq(ft_strtod(s, &end), 0.0015, 1e-12)); ASSERT("endptr at end for '1.5e-3'", *end == '\0');
+	s = "2E+2"; ASSERT("ft_strtod(\"2E+2\") == 200", approx_eq(ft_strtod(s, &end), 200.0, 1e-12)); ASSERT("endptr at end for '2E+2'", *end == '\0');
+
+	// invalid exponent digits: should stop before 'e'
+	s = "1e"; ASSERT("ft_strtod(\"1e\") == 1", approx_eq(ft_strtod(s, &end), 1.0, 1e-12)); ASSERT("endptr points to 'e'", *end == 'e');
+
+	// stop at first non-number
+	s = "12.3xyz"; ASSERT("ft_strtod stops before 'x'", approx_eq(ft_strtod(s, &end), 12.3, 1e-12)); ASSERT("endptr at 'x'", *end == 'x');
+
+	// no digits -> return 0.0 and endptr == nptr
+	s = "abc"; ASSERT("ft_strtod(\"abc\") returns 0.0", approx_eq(ft_strtod(s, &end), 0.0, 1e-12)); ASSERT("endptr == start for no-digits", end == s);
+	s = "   +"; ASSERT("ft_strtod(\"   +\") returns 0.0", approx_eq(ft_strtod(s, &end), 0.0, 1e-12)); ASSERT("endptr == start when only ws+sign", end == s);
+
+	// combined sign, exponent and trailing characters
+	s = "   -0.25e+2xyz"; ASSERT("ft_strtod( '   -0.25e+2xyz' ) == -25.0", approx_eq(ft_strtod(s, &end), -25.0, 1e-12)); ASSERT("endptr at 'x'", *end == 'x');
+}
+
 // ───────────── PRINTF ─────────────
 void test_printf(void)
 {
@@ -195,6 +253,7 @@ int main(void)
 	test_strmapi_iteri();
 	test_lists();
 	test_misc();
+	test_strtod();
     test_printf();
     test_get_next_line();
 
