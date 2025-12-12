@@ -94,13 +94,7 @@ SRCS        = $(LIBFT_SRCS) $(FT_PRINTF_SRCS) $(GNL_SRCS)
 #   Convert .c files to .o
 # -------------------------------
 OBJS        = $(SRCS:.c=.o)
-
-# -------------------------------
-#         Header files
-# -------------------------------
-HEADERS     = libft.h \
-              ft_printf.h \
-              get_next_line.h
+DEPS        = $(OBJS:.o=.d)
 
 # -------------------------------
 #          Build rules
@@ -113,11 +107,11 @@ $(NAME): $(OBJS)
 	@echo "✅ Libft object files compiled."
 	@echo "🚀 $(NAME) created!"
 
-%.o: %.c $(HEADERS)
-	@$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c
+	@$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
 	
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) $(DEPS)
 	@echo "🗑️ Libft object files removed."
 
 fclean: clean
@@ -126,4 +120,7 @@ fclean: clean
 
 re: fclean all
 
+-include $(DEPS)
+
 .PHONY: all clean fclean re
+.DELETE_ON_ERROR:
